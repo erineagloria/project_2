@@ -4,12 +4,12 @@
 # eg: find_all_dishes()
 # and then pause with a repl
 
-require "pry"
+# require "pry"
 require "pg"
 require_relative "models/company.rb"
 require_relative "models/event.rb"
 
-binding.pry
+# binding.pry
 
 
 
