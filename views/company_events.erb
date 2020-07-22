@@ -1,0 +1,27 @@
+<nav><button class="home_btn"><a href="/">Home</a></button>
+<button class="about_btn"><a href="/about">About</a></button></nav>
+
+<h3>Welcome <%= company["main_contact"]%></h3>
+
+<main>
+
+<div class="company_grid">
+    <% events.each do | event | %>
+        <img src="<%= event["image_url"]%>" alt="">
+        <p> <%= event["theme"]%></p>
+        <p><%= event["event_type"]%></p>
+        <p>Venue: <%= event["venue"]%></p>
+        <p>Event Date: <%= event["event_date"]%></p>
+        <p>Guests: <%= event["guests"]%> pax</p>
+        <p>Budget: $ <%= event["budget"]%></p>
+    <% end %>
+</div>
+
+</main>
+
+
+
+    
+
+
+

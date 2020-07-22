@@ -1,0 +1,18 @@
+<nav><button class="home_btn"><a href="/">Home</a></button>
+<button class="about_btn"><a href="/about">About</a></button></nav>
+
+<img src="<%= event["image_url"]%>" alt="event image">
+
+<div class="event_details">
+<p> <%= event["theme"]%></p>
+<p><%= event["event_type"]%></p>
+<p>Venue: <%= event["venue"]%></p>
+<p>Guests: <%= event["guests"]%> pax</p>
+</div>
+
+<form action="/events" method="post">
+    <input type="hidden" name="_method" value="delete"> 
+    <input type="hidden" name="id" value="<%= event["id"]%>">
+    <button>Delete</button>
+</form>
+
