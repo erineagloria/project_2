@@ -2,10 +2,9 @@
 require 'sinatra'
 
 require 'sinatra/reloader' if development? 
-also_reload "models/company" if development? 
-also_reload "models/event" if development? 
+# also_reload "models/company" if development? 
+# also_reload "models/event" if development? 
 
-require 'pry'
 require 'pg'
 
 # requiring our own files, relative from where we are
