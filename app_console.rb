@@ -8,6 +8,4 @@ require "pg"
 require_relative "models/company.rb"
 require_relative "models/event.rb"
 
-# binding.pry
-
 
