@@ -10,9 +10,5 @@
 <p>Guests: <%= event["guests"]%> pax</p>
 </div>
 
-<form action="/events" method="post">
-    <input type="hidden" name="_method" value="delete"> 
-    <input type="hidden" name="id" value="<%= event["id"]%>">
-    <button>Delete</button>
-</form>
+
 

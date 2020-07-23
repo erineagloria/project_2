@@ -2,11 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>theLoop</title>
+  <title>loopd</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
+<header>
+<img src="https://res.cloudinary.com/dapgd7psj/image/upload/v1595470155/wunqj5odwbfpxpzq3ce9.jpg" alt="">
+</header>
+
+<% if logged_in? %>
+    <p>Logged in as <%= current_company["company"]%></p>
+    <p>Welcome <%= current_company["main_contact"]%></h3></p>
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>Logout</button>
+    </form>
+  <% end %>
 
   <%= yield %>
 

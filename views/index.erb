@@ -1,18 +1,13 @@
 <nav><button class="about_btn"><a href="/about">About</a></button></nav>
 
-<h1>theLoop</h1>
-
 <div class="login_form">
 <form action="/session" method="post">
     <input name="company" type="text" placeholder="Company Name">
     <input name="password" type="password" placeholder="Password">
     <button>Login</button>
-   <% if !params["company"] || BCrypt::Password.new(company["password_digest"]) == !params["password"]%>
-<p>Incorrect company name and/or password. Please retry.</p>
-<% end %>
 </form>
+<%= error_message %>
 </div>
-
 
 <div class="image_grid">
 <% events.each do | event | %>
@@ -21,3 +16,4 @@
     </a>
 <% end %>
 </div>
+

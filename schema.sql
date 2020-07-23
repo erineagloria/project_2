@@ -29,3 +29,4 @@ ALTER TABLE events ALTER COLUMN budget TYPE NUMERIC(10,2) USING budget::NUMERIC;
 
 
 
+

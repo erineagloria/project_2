@@ -18,3 +18,8 @@ def find_one_company_by_name(company)
     companies = run_sql(sql)
     return companies.first
 end
+
+def find_one_company_by_company_id(company_id)
+    companies = run_sql("SELECT * FROM companies WHERE company_id = #{company_id};")
+    return companies.first
+end

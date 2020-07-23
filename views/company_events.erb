@@ -1,9 +1,11 @@
 <nav><button class="home_btn"><a href="/">Home</a></button>
-<button class="about_btn"><a href="/about">About</a></button></nav>
-
-<h3>Welcome <%= company["main_contact"]%></h3>
+<button class="about_btn"><a href="/about">About</a></button>
+<button class="new_event_btn"><a href="/events/new">Host A New Event</a></button>
+</nav>
 
 <main>
+
+<h4><%= company["company"]%> events with loopd</h4>
 
 <div class="company_grid">
     <% events.each do | event | %>
@@ -14,14 +16,14 @@
         <p>Event Date: <%= event["event_date"]%></p>
         <p>Guests: <%= event["guests"]%> pax</p>
         <p>Budget: $ <%= event["budget"]%></p>
+        <% if event["event_date"] > Time.now.to_s %>
+          <button><a href="/events/<%= event["id"]%>/edit">Update</a></button> 
+        <% else %>
+            <button>Add Comments</button>
+        <% end %>
+        <br>
+        <br>
     <% end %>
 </div>
 
 </main>
-
-
-
-    
-
-
-

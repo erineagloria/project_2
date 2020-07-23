@@ -1,6 +1,13 @@
 body {
-    background-color: black;
+    background-color: #080024;
     color: whitesmoke;
+}
+
+a {
+    color: black;
+}
+a:link {
+    text-decoration: none;
 }
 
 .login_form {

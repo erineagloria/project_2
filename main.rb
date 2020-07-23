@@ -5,20 +5,30 @@ require 'sinatra/reloader' if development?
 also_reload "models/company" if development? 
 also_reload "models/event" if development? 
 
-# require 'pry'
+require 'pry'
 require 'pg'
 
 # requiring our own files, relative from where we are
 require_relative 'models/company.rb'
 require_relative 'models/event.rb'
 
+enable :sessions
+
+def logged_in? 
+  return !!session["company_id"]
+end
+
+def current_company
+  find_one_company_by_company_id(session["company_id"]) 
+end
+
 get '/' do
   events = find_all_events
-  erb :index, locals: { events: events}
+  erb :index, locals: { events: events, error_message: ""}
 end
 
 get '/about' do 
-  "this page is currently blank"
+  erb :about 
 end
 
 get '/events/new' do 
@@ -30,20 +40,42 @@ get '/events/:id' do
   erb :show, locals: { event: event}
 end
 
+post '/events' do 
+  create_event(session["company_id"], params["event_type"], params["event_date"], params["venue"], params["guests"], params["theme"], params["budget"], params["image_url"])
+  redirect '/dashboard'
+end
+
 post '/session' do 
   company = find_one_company_by_name(params["company"])
   
   if company && BCrypt::Password.new(company["password_digest"]) == params["password"]
 
     session["company_id"] = company["company_id"]
-    erb :company_events, locals: {company: session["company_id"],  }
-    
+    redirect "/dashboard"
   else
-    redirect "/"
+    events = find_all_events
+    erb :index, locals: {events: events, error_message: "Incorrect company name and/or password. Please try again."}
   end
 
 end
 
+get '/dashboard' do 
+  company = current_company
+  events = find_all_events_by_company_id(session["company_id"])
+  erb :company_events, locals: {company: company, events: events }
+end
 
+delete '/session' do 
+  session["company_id"] = nil
+  redirect "/"
+end
 
+get '/events/:id/edit' do
+  event_hash = find_one_event_by_id(params["id"])
+  erb :edit_event, locals: {event: event_hash}
+end
 
+patch '/events/:id' do
+  update_event(params["id"], params["event_type"], params["event_date"], params["venue"], params["guests"], params["theme"], params["budget"], params["image_url"])
+  redirect "/dashboard"
+end

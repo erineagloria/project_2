@@ -1,8 +1,7 @@
-<h2>Host another event with us!</h2>
+<h1>Update your event</h1>
 
-<div class="new_event_form">
-
-<form action="/events" method="post">
+<form action="/events/<%= event["id"]%>" method="post">
+    <input type="hidden" name="_method" value="patch">
     <input name="event_type" type="text" placeholder="Event Type">
     <input name="event_date" type="date" placeholder="Preferred Date">
     <input name="venue" type="text" placeholder="Venue">
@@ -10,8 +9,6 @@
     <input name="theme" type="text" placeholder="Theme">
     <input name="budget" type="numeric" placeholder="Approximate Budget">
     <input name="image_url" type="text" placeholder="Inspiration Image">
-    <button>Submit</button>
+    <button>Update</button>
 
 </form>
-
-</div>
