@@ -5,11 +5,13 @@
   <title>loopd</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3655d35991.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 <header>
-<img src="https://res.cloudinary.com/dapgd7psj/image/upload/v1595470155/wunqj5odwbfpxpzq3ce9.jpg" alt="">
+<img class="logo" src="https://res.cloudinary.com/dapgd7psj/image/upload/v1595470155/wunqj5odwbfpxpzq3ce9.jpg" alt="">
 </header>
 
 <% if logged_in? %>
@@ -17,7 +19,8 @@
     <p>Welcome <%= current_company["main_contact"]%></h3></p>
     <form action="/session" method="post">
       <input type="hidden" name="_method" value="delete">
-      <button>Logout</button>
+      <button><i class="fas fa-sign-out-alt"></i></button>
+      <a href="/dashboard"><i class="far fa-calendar-alt"></i></a>
     </form>
   <% end %>
 

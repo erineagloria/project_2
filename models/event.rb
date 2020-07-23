@@ -17,8 +17,14 @@ def find_all_events_by_company_id(company_id)
     run_sql(sql)
 end
 
-def update_event(id, event_type, event_date, venue, guests, theme, budget, image_url)
-    sql = "update events set event_type = '#{event_type}', event_date = '#{event_date}', venue = '#{venue}', guests = #{guests}, theme = '#{theme}', budget = #{budget}, image_url = '#{image_url}' WHERE id = #{id};"
+def update_event(id, event_type, event_date, venue, guests, theme, budget, image_url, notes)
+    sql = "update events set event_type = '#{event_type}', event_date = '#{event_date}', venue = '#{venue}', guests = #{guests}, theme = '#{theme}', budget = #{budget}, image_url = '#{image_url}', notes = '#{notes}' WHERE id = #{id};"
+    events = run_sql(sql)
+    events.first
+end
+
+def update_notes(id, notes)
+    sql = "update events set notes = '#{notes}' WHERE id = #{id};"
     events = run_sql(sql)
     events.first
 end

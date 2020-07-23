@@ -1,6 +1,11 @@
 body {
-    background-color: #080024;
-    color: whitesmoke;
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    /* background-color: #080024; */
+    color: black;
+    cursor: pointer;
+    width: 80%;
+    /* text-align: center; */
 }
 
 a {
@@ -12,9 +17,9 @@ a:link {
 
 .login_form {
     text-align: center;
-    gap: 10px;
+    gap: 20px;
     padding: 45px;
-    border: 5px solid white;
+    /* border: 5px solid white; */
     margin-bottom: 10px;
 
 }
@@ -22,10 +27,17 @@ a:link {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 5px;
-    border: 5px solid white;
+    gap: 10px;
+    border: 5px solid green;
 }
 img {
-    width: 200px;
-    border-radius: 20% 20%;
+    width: 300px;
+    height: 200px;
+    /* border-radius: 20% 20%; */
+}
+
+.logo {
+    text-align: left;
+    width: 250px;
+    height: 150px;
 }

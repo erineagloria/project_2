@@ -1,14 +1,45 @@
-<h1>Update your event</h1>
 
-<form action="/events/<%= event["id"]%>" method="post">
-    <input type="hidden" name="_method" value="patch">
-    <input name="event_type" type="text" placeholder="Event Type">
-    <input name="event_date" type="date" placeholder="Preferred Date">
-    <input name="venue" type="text" placeholder="Venue">
-    <input name="guests" type="integer" placeholder="Guest Numbers">
-    <input name="theme" type="text" placeholder="Theme">
-    <input name="budget" type="numeric" placeholder="Approximate Budget">
-    <input name="image_url" type="text" placeholder="Inspiration Image">
-    <button>Update</button>
+    <% if event["event_date"] > Time.now.to_s %>
+
+        <form action="/events/<%= event["id"]%>" method="post">
+        <input type="hidden" name="_method" value="patch">
+
+        <h1>Update your event</h1>
+
+
+        <label for="">Event Type</label>
+        <input name="event_type" type="text" value="<%= event["event_type"]%>">
+
+        <label for="">Date</label>
+        <input name="event_date" type="date" value="<%= event["event_date"]%>">
+
+        <label for="">Venue</label>
+        <input name="venue" type="text" value="<%= event["venue"]%>">
+
+        <label for="">Number of Guests</label>
+        <input name="guests" type="integer" value="<%= event["guests"]%>">
+
+        <label for="">Theme</label>
+        <input name="theme" type="text" value="<%= event["theme"]%>">
+
+        <label for="">Budget</label>
+        <input name="budget" type="numeric" value="<%= event["budget"]%>">
+
+        <label for="">Inspiration Image</label>
+        <input name="image_url" type="text" value="<%= event["image_url"]%>">
+
+        <label for="">Notes</label>
+        <textarea name="notes" type="text" value="<%= event["notes"]%>" id="" cols="30" rows="10">Notes: </textarea>
+
+    <% else %>
+
+        <form action="/events/<%= event["id"]%>/notes" method="post">
+        <input type="hidden" name="_method" value="patch">
+
+        <h4>Add Notes</h4>
+        <textarea name="notes" type="text" value="<%= event["notes"]%>" id="" cols="30" rows="10">Notes: </textarea>
+
+    <% end %>
+        <button><i class="fas fa-glass-cheers"></i></button>
 
 </form>

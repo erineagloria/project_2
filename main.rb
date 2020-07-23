@@ -2,10 +2,10 @@
 require 'sinatra'
 
 require 'sinatra/reloader' if development? 
-# also_reload "models/company" if development? 
-# also_reload "models/event" if development? 
+also_reload "models/company" if development? 
+also_reload "models/event" if development? 
 
-# require 'pry'
+require 'pry'
 require 'pg'
 
 # requiring our own files, relative from where we are
@@ -76,6 +76,14 @@ get '/events/:id/edit' do
 end
 
 patch '/events/:id' do
-  update_event(params["id"], params["event_type"], params["event_date"], params["venue"], params["guests"], params["theme"], params["budget"], params["image_url"])
+
+  update_event(params["id"], params["event_type"], params["event_date"], params["venue"], params["guests"], params["theme"], params["budget"], params["image_url"], params["notes"])
+  
   redirect "/dashboard"
 end
+
+patch '/events/:id/notes' do 
+  update_notes(params["id"], params["notes"])
+  redirect "/dashboard"
+end
+

@@ -16,14 +16,18 @@
         <p>Event Date: <%= event["event_date"]%></p>
         <p>Guests: <%= event["guests"]%> pax</p>
         <p>Budget: $ <%= event["budget"]%></p>
+        <p><%= event["notes"]%></p>
+
         <% if event["event_date"] > Time.now.to_s %>
-          <button><a href="/events/<%= event["id"]%>/edit">Update</a></button> 
+          <a href="/events/<%= event["id"]%>/edit"><i class="far fa-edit"></i></a>
         <% else %>
-            <button>Add Comments</button>
+          <a href="/events/<%= event["id"]%>/edit"><i class="far fa-comment"></i></a>
         <% end %>
+
         <br>
         <br>
     <% end %>
 </div>
 
 </main>
+
