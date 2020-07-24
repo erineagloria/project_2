@@ -1,45 +1,47 @@
+<section class="edit_form">
+    
+    <h1>Update your event</h1>
 
     <% if event["event_date"] > Time.now.to_s %>
 
         <form action="/events/<%= event["id"]%>" method="post">
         <input type="hidden" name="_method" value="patch">
 
-        <h1>Update your event</h1>
+        <ul class="edit">
 
+        <li><label for="">Event Type</label>
+        <input name="event_type" type="text" size="28" value="<%= event["event_type"]%>"></li>
 
-        <label for="">Event Type</label>
-        <input name="event_type" type="text" value="<%= event["event_type"]%>">
+        <li><label for="">Date</label>
+        <input name="event_date" type="date" value="<%= event["event_date"]%>"></li>
 
-        <label for="">Date</label>
-        <input name="event_date" type="date" value="<%= event["event_date"]%>">
+        <li><label for="">Venue</label>
+        <input name="venue" type="text" size="33" value="<%= event["venue"]%>"></li>
 
-        <label for="">Venue</label>
-        <input name="venue" type="text" value="<%= event["venue"]%>">
+        <li><label for="">Number of Guests</label>
+        <input name="guests" type="integer" size="20.75" value="<%= event["guests"]%>"></li>
 
-        <label for="">Number of Guests</label>
-        <input name="guests" type="integer" value="<%= event["guests"]%>">
+        <li><label for="">Theme</label>
+        <input name="theme" type="text" size="32.5" value="<%= event["theme"]%>"></li>
 
-        <label for="">Theme</label>
-        <input name="theme" type="text" value="<%= event["theme"]%>">
+        <li><label for="">Budget</label>
+        <input name="budget" type="numeric" size="32" value="<%= event["budget"]%>"></li>
 
-        <label for="">Budget</label>
-        <input name="budget" type="numeric" value="<%= event["budget"]%>">
+        <li><label for="">Inspiration Image</label>
+        <input name="image_url" type="text" size="21" value="<%= event["image_url"]%>"></li>
 
-        <label for="">Inspiration Image</label>
-        <input name="image_url" type="text" value="<%= event["image_url"]%>">
-
-        <label for="">Notes</label>
-        <textarea name="notes" type="text" value="<%= event["notes"]%>" id="" cols="30" rows="10">Notes: </textarea>
+        <li><textarea name="notes" type="text" value="<%= event["notes"]%>" id="" cols="34" rows="10"><%= event["notes"]%></textarea></li>
 
     <% else %>
 
         <form action="/events/<%= event["id"]%>/notes" method="post">
         <input type="hidden" name="_method" value="patch">
 
-        <h4>Add Notes</h4>
-        <textarea name="notes" type="text" value="<%= event["notes"]%>" id="" cols="30" rows="10">Notes: </textarea>
+        <textarea name="notes" type="text" value="<%= event["notes"]%>" id="" cols="30" rows="10"><%= event["notes"]%></textarea>
 
     <% end %>
-        <button><i class="fas fa-glass-cheers"></i></button>
-
+        <button>Cheers!</button>
+    </ul>
 </form>
+
+</section>

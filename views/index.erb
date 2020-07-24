@@ -1,19 +1,19 @@
-<nav><button class="about_btn"><a href="/about">About</a></button></nav>
 
 <div class="login_form">
 <form action="/session" method="post">
-    <input name="company" type="text" placeholder="Company Name">
-    <input name="password" type="password" placeholder="Password">
+    <input class="company" name="company" size="30" type="text" placeholder="Company Name">
+    <input class="password"name="password" size="30" type="password" placeholder="Password">
     <button><i class="fas fa-sign-in-alt"></i></button>
 </form>
 <%= error_message %>
 </div>
 
-<div class="image_grid">
-<% events.each do | event | %>
-    <a href="/events/<%= event["id"]%>">
-        <img src="<%= event["image_url"]%>" alt="">
-    </a>
-<% end %>
-</div>
-
+<section class="image_grid">
+    <div class="home_images">
+    <% events.each do | event | %>
+        <a href="/events/<%= event["id"]%>">
+            <img src="<%= event["image_url"]%>" alt="">
+        </a>
+    <% end %>
+    </div>
+</section>

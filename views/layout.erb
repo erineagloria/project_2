@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>loopd</title>
+  <title>loopd | Event Engine</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -12,16 +12,23 @@
 <body>
 <header>
 <img class="logo" src="https://res.cloudinary.com/dapgd7psj/image/upload/v1595470155/wunqj5odwbfpxpzq3ce9.jpg" alt="">
+<p class="phrase">Keeping our favourite clients loopd in!</p>
 </header>
 
 <% if logged_in? %>
-    <p>Logged in as <%= current_company["company"]%></p>
+    <h2>Logged in as <%= current_company["company"]%></h2>
     <p>Welcome <%= current_company["main_contact"]%></h3></p>
-    <form action="/session" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button><i class="fas fa-sign-out-alt"></i></button>
-      <a href="/dashboard"><i class="far fa-calendar-alt"></i></a>
-    </form>
+    <nav>
+      <ul>
+        <li><button><a href="/about">About</a></button></li>
+        <li><button><a href="/events/new">Party with us again!</a></button></li>
+        <li><button><a href="/dashboard">Dashboard</a></button></li>
+        <li><form action="/session" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Log Out</button></li>
+      </form>
+      </ul>
+    </nav>
   <% end %>
 
   <%= yield %>

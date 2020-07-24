@@ -1,5 +1,5 @@
-def create_event(company_id, event_type, event_date, venue, guests, theme, budget, image_url)
-    sql = "insert into events (company_id, event_type, event_date, venue, guests, theme, budget, image_url) values (#{company_id}, '#{event_type}', '#{event_date}', '#{venue}', #{guests}, '#{theme}', #{budget}, '#{image_url}');"
+def create_event(company_id, event_type, event_date, venue, guests, theme, budget, image_url, notes)
+    sql = "insert into events (company_id, event_type, event_date, venue, guests, theme, budget, image_url, notes) values (#{company_id}, '#{event_type}', '#{event_date}', '#{venue}', #{guests}, '#{theme}', #{budget}, '#{image_url}', '#{notes}');"
     run_sql(sql)
 end 
 

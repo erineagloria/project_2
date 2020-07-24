@@ -1,19 +1,24 @@
-<h2>Host another event with us!</h2>
+<section class="new_event_form">
 
-<div class="new_event_form">
+<h2>Party with us again!</h2>
 
-<form action="/events" method="post">
-    <input name="event_type" type="text" placeholder="Event Type">
-    <input name="event_date" type="date" placeholder="Preferred Date">
-    <input name="venue" type="text" placeholder="Venue">
-    <input name="guests" type="integer" placeholder="Guest Numbers">
-    <input name="theme" type="text" placeholder="Theme">
-    <input name="budget" type="numeric" placeholder="Approximate Budget">
-    <input name="image_url" type="text" placeholder="Inspiration Image">
-    <textarea name="notes" type="text" id="" cols="30" rows="10"></textarea>
-    
-    <button>Submit</button>
+<ul class="form">
 
-</form>
+    <form action="/events" method="post">
+        <li><input name="event_date" type="date" size="40"></li>
+        <li><input name="event_type" type="text" size="40" placeholder="Event Type"></li>
+        <li><input name="venue" type="text" size="40" placeholder="Venue"></li>
+        <li><input name="guests" type="integer" size="40" placeholder="Guest Numbers"></li>
+        <li><input name="theme" type="text" size="40" placeholder="Theme"></li>
+        <li><input name="budget" type="numeric" size="40" placeholder="Approximate Budget"></li>
+        <li><input name="image_url" type="text" size="40" placeholder="Inspiration Image"></li>
+        <li><textarea name="notes" type="text" id="" cols="34" rows="10" placeholder="Notes"></textarea></li>
+        
+        <button>Cheers!</button>
 
-</div>
+    </form>
+
+</ul>
+
+</section>
+

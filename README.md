@@ -22,7 +22,6 @@ Target audience: Existing clients (when a client books an event with our busines
 -Trello (used to make to-do lists)
 -HTML5
 -CSS
--JavaScript?
 -Ruby
 -PostgreSQL
 -Sinatra
@@ -34,4 +33,4 @@ Target audience: Existing clients (when a client books an event with our busines
 ### Installation Instructions:
 
 ### Unsolved Problems/If I had more time:
--I would create a Business Admin account to create new companies/close accounts. 
+-I would create a Business Admin account to create new users (companies) and close accounts. 

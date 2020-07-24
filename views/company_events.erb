@@ -1,33 +1,31 @@
-<nav><button class="home_btn"><a href="/">Home</a></button>
-<button class="about_btn"><a href="/about">About</a></button>
-<button class="new_event_btn"><a href="/events/new">Host A New Event</a></button>
-</nav>
 
 <main>
 
-<h4><%= company["company"]%> events with loopd</h4>
+<h1 class="events_with"><%= company["company"]%> Events with loopd</h1>
 
-<div class="company_grid">
-    <% events.each do | event | %>
-        <img src="<%= event["image_url"]%>" alt="">
-        <p> <%= event["theme"]%></p>
-        <p><%= event["event_type"]%></p>
-        <p>Venue: <%= event["venue"]%></p>
-        <p>Event Date: <%= event["event_date"]%></p>
-        <p>Guests: <%= event["guests"]%> pax</p>
-        <p>Budget: $ <%= event["budget"]%></p>
-        <p><%= event["notes"]%></p>
+  <section class="company_grid">
 
-        <% if event["event_date"] > Time.now.to_s %>
-          <a href="/events/<%= event["id"]%>/edit"><i class="far fa-edit"></i></a>
-        <% else %>
-          <a href="/events/<%= event["id"]%>/edit"><i class="far fa-comment"></i></a>
+    <div class="each_event">
+        <% events.each do | event | %>
+            <img class="event_image" src="<%= event["image_url"]%>" alt="">
+            <ul class="event_text">
+              <li> <%= event["theme"]%></li>
+              <li><%= event["event_type"]%></li>
+              <li>Venue: <%= event["venue"]%></li>
+              <li>Event Date: <%= event["event_date"]%></li>
+              <li>Guests: <%= event["guests"]%> pax</li>
+              <li>Budget: $ <%= event["budget"]%></li>
+              <li><%= event["notes"]%></li>
+
+              <% if event["event_date"] > Time.now.to_s %>
+                <button><a href="/events/<%= event["id"]%>/edit">Update</a></button>
+              <% else %>
+                <button><a href="/events/<%= event["id"]%>/edit">Add Notes</a></button>
+              <% end %>
+            </ul>
         <% end %>
-
-        <br>
-        <br>
-    <% end %>
-</div>
+    </div>
+  </section>
 
 </main>
 

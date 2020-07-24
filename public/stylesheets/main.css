@@ -1,43 +1,125 @@
+header {
+    text-align: center;
+}
+
 body {
-    background-color: white;
+    /* background-color: white; */
     font-family: 'Quicksand', sans-serif;
-    /* background-color: #080024; */
-    color: black;
+    background-color: #080024;
+    color: whitesmoke;
     cursor: pointer;
-    width: 80%;
-    /* text-align: center; */
+    width: 100%;
+}
+.logo {
+    width: 250px;
+    height: 150px;
+    border-radius: none;
+}
+li.nav {
+    display: inline;
+    padding: 15px;
+}
+nav ul {
+    list-style: none;
+    text-align: left;
+    font-size: 18px;
+    margin: 0 auto;
 }
 
 a {
-    color: black;
+    color: #080024;
 }
+
 a:link {
     text-decoration: none;
+}
+
+.phrase {
+    font-style: italic;
+    margin-top: 0;
 }
 
 .login_form {
     text-align: center;
     gap: 20px;
     padding: 45px;
-    /* border: 5px solid white; */
     margin-bottom: 10px;
+}
 
+.company {
+    margin-right: 10px;
 }
+
+.password {
+    margin-right: 10px;
+}
+
 .image_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
-    border: 5px solid green;
+    display: flex;
+    justify-content: center;
 }
+
+.events_with{
+    text-align: center;
+}
+
+.event_image {
+    margin-bottom: 30px;
+}
+
+.event_text {
+    list-style: none;
+    margin-bottom: 20px;
+}
+.home_images {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 15px;
+    line-height: 75px;
+    gap: 30px;
+}
+
 img {
     width: 300px;
     height: 200px;
-    /* border-radius: 20% 20%; */
+    border-radius: 5% 5%;
 }
 
-.logo {
-    text-align: left;
-    width: 250px;
-    height: 150px;
+.company_grid {
+    display: flex;
+    justify-content: center;
+}
+
+.each_event{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.new_event_form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.edit_form {
+    display: flex;
+    justify-content: center;
+}
+
+.form, .edit {
+    list-style: none;
+}
+
+.about_page {
+    justify-content: center;
+    margin: auto 32px;
+}
+
+.show_event_page {
+    text-align: center;
+    gap: 15px;
+    display: flex;
+    justify-content: center;
 }

@@ -2,8 +2,8 @@
 require 'sinatra'
 
 require 'sinatra/reloader' if development? 
-# also_reload "models/company" if development? 
-# also_reload "models/event" if development? 
+also_reload "models/company" if development? 
+also_reload "models/event" if development? 
 
 require 'pg'
 
@@ -40,7 +40,7 @@ get '/events/:id' do
 end
 
 post '/events' do 
-  create_event(session["company_id"], params["event_type"], params["event_date"], params["venue"], params["guests"], params["theme"], params["budget"], params["image_url"])
+  create_event(session["company_id"], params["event_type"], params["event_date"], params["venue"], params["guests"], params["theme"], params["budget"], params["image_url"], params["notes"])
   redirect '/dashboard'
 end
 

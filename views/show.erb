@@ -1,14 +1,18 @@
-<nav><button class="home_btn"><a href="/">Home</a></button>
-<button class="about_btn"><a href="/about">About</a></button></nav>
+<nav>
+    <ul class="nav">
+        <li><button><a href="/">Home</a></button></li>
+        <li><button><a href="/about">About</a></button></li>
+    </ul>
+</nav>
 
-<img src="<%= event["image_url"]%>" alt="event image">
+<div class="show_event_page">
+    <img src="<%= event["image_url"]%>" alt="event image">
 
-<div class="event_details">
-<p> <%= event["theme"]%></p>
-<p><%= event["event_type"]%></p>
-<p>Venue: <%= event["venue"]%></p>
-<p>Guests: <%= event["guests"]%> pax</p>
+    <div class="event_details">
+    <p> <%= event["theme"]%></p>
+    <p><%= event["event_type"]%></p>
+    <p>Venue: <%= event["venue"]%></p>
+    <p>Guests: <%= event["guests"]%> pax</p>
+    </div>
+
 </div>
-
-
-
