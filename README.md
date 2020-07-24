@@ -1,36 +1,37 @@
 ### GA SEI Project 2: Building my first Full-Stack Application
-### Project Title: EventEngine/Homecoming
+### loopd | Client Event Engine
 
-### Link to project here:
+## Project Description: 
 
-### Project Description: 
-1 paragraph of what I've built...
-I've leaned in to my events and sales experience to find a solution to a common problem I used to run into with return clients who overtime have different contacts/event organisers. I've built a client event directory targeted towards a business's return clients who want to keep track of all the events they have hosted with us over the years. It will highlight basic info (event name, venue, theme, date(or just month and year), number of guests, total budget, hero image, sales manager). 
+Visit <a href="https://boiling-temple-92123.herokuapp.com/">loopd</a>
 
-The home page will be simple. There will be a login feature and inspiration images of past events. When the images are when clicked it will give a few event details such as venue, number of guests, theme, month & year, (client will be anonymous of course!)
+I've built a client event directory targeted for a business's existing clients who want to keep track of all the events they have hosted with us over the years. I've leaned into my events and sales experience to create this app. Even though a company may have hosted events with us in the past, the main contact/event organiser may have changed resulting in a loss of valuable information and feedback. 
 
-When the client logs in there will be a record of their event history with our business. Previous events will be locked, but they can make updates to upcoming events (such as theme, number of guests, budget).
+### Technologies used:
+* Whimsical (used to make the wireframe)
+* Trello (used to make to-do lists)
+* HTML5
+* CSS
+* Ruby
+* PostgreSQL
+* Sinatra
+* Heroku (to host my website)
+* BCrypt (password encryption)
 
-When logged in they will also be able to like and comment other images, and upload their own images to their account (bonus feature, if I have time!)
+### App Features:
+*Please see attached wireframes for initial design and order of tasks.**
 
-The app will allow them to draw inspiration from other clients previous events (also a great sales tool) and keep a record of their events with our business. 
+loopd is built for existing clients. Upon loading the website the user will be asked to enter their login details(company name & password) right away.
 
-Target audience: Existing clients (when a client books an event with our business, they will be added to the network)
+Below the login details there is a feed of previous events that have taken place for inspiration. When the images are when clicked it will give a few event details. The client will be anonymous of course!
 
-### Technologies Used:
--Whimsical (used to make the wireframe)
--Trello (used to make to-do lists)
--HTML5
--CSS
--Ruby
--PostgreSQL
--Sinatra
--Heroku (to host my website)
--BCrypt (password encryption)
 
-### Approach:
+Upon logging in, the user will have access to their dashboard with a record of events listed in order with the latest/upcoming events at the top. Clients can update upcoming events and also submit a request to host another event with us. Clients can also add notes to previous events; however, all other details will be locked.
 
-### Installation Instructions:
+The app will allow them to draw inspiration from other clients' events and keep a record of their events with our business. 
 
-### Unsolved Problems/If I had more time:
--I would create a Business Admin account to create new users (companies) and close accounts. 
+### Improvements:
+* Add hover features to the nav bar.
+* Re-adjust the input fields so they all align.
+* Add a 'Business Administrator account' to create new users (companies) and close accounts. 
+* Add a feature for clients to like/comment other client's events.
