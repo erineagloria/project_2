@@ -19,6 +19,10 @@
 
               <% if event["event_date"] > Time.now.to_s %>
                 <button><a href="/events/<%= event["id"]%>/edit">Update</a></button>
+                <form action="/events/<%= event["id"]%>" method="post">
+                  <input type="hidden" name="_method" value="delete">
+                  <button>Delete</button>
+                </form>
               <% else %>
                 <button><a href="/events/<%= event["id"]%>/edit">Add Notes</a></button>
               <% end %>

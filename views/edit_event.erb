@@ -36,7 +36,6 @@
 
         <form action="/events/<%= event["id"]%>/notes" method="post">
         <input type="hidden" name="_method" value="patch">
-
         <textarea name="notes" type="text" value="<%= event["notes"]%>" id="" cols="30" rows="10"><%= event["notes"]%></textarea>
 
     <% end %>

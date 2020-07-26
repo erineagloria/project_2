@@ -86,3 +86,8 @@ patch '/events/:id/notes' do
   redirect "/dashboard"
 end
 
+
+delete '/events/:id' do 
+  destroy_event(params["id"])
+  redirect "/dashboard"
+end
