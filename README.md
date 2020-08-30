@@ -2,6 +2,7 @@
 ## loopd | Client Event Engine
 
 Visit <a href="https://boiling-temple-92123.herokuapp.com/">loopd</a>
+
 *You can login as GA, password: pudding*
 
 <img src="https://github.com/erineagloria/project_2/blob/master/Loopd%20Final%20Design.png?raw=true" alt="loopd-final-design">
